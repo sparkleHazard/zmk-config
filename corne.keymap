@@ -1,0 +1,170 @@
+/*
+ * Copyright (c) 2020 The ZMK Contributors
+ *
+ * SPDX-License-Identifier: MIT
+ */
+
+#include <behaviors.dtsi>
+#include <dt-bindings/zmk/keys.h>
+#include <dt-bindings/zmk/bt.h>
+
+// Layers
+#define QWERT  		0
+#define COLE     	1
+#define NUM		2
+#define SYM		3
+#define FNC		4
+#define BT		5
+#define GAMING		6
+
+// Home row mods - QWERTY
+#define HOME_A		&hm LSHIFT A
+#define HOME_S		&hm LGUI   S
+#define HOME_D		&hm LALT   D
+#define HOME_F		&hm LCTRL  F
+#define HOME_J		&hm RCTRL  J
+#define HOME_K		&hm LALT   K
+#define HOME_L		&hm LGUI   L
+#define HOME_SEMI	&hm LSHIFT SEMI
+
+// Home row mods - COLEMAKDH
+#define HOME_A		&hm LSHIFT A
+#define HOME_R		&hm LGUI   R
+#define HOME_S		&hm LALT   S
+#define HOME_T		&hm LCTRL  T
+#define HOME_N		&hm RCTRL  N
+#define HOME_E		&hm LALT   E
+#define HOME_I		&hm LGUI   I
+#define HOME_O		&hm LSHIFT O
+
+// Home row mods - NUM
+#define HOME_TAB	&hm LSHIFT TAB
+#define HOME_DOWN       &hm LCTRL  DOWN
+#define HOME_UP         &hm LALT   UP
+#define HOME_RIGHT      &hm LGUI   RIGHT
+
+// Home row mods - SYM
+#define HOME_ESC      	&hm LSHIFT ESC
+#define HOME_SQT        &hm LGUI   SQT
+#define HOME_HASH       &hm LALT   NON_US_HASH
+#define HOME_BSLH       &hm LCTRL  BSLH
+#define HOME_MIN        &hm RCTRL  MINUS
+#define HOME_EQL        &hm LALT   EQUAL
+#define HOME_LBKT       &hm LGUI   LBKT
+#define HOME_RBKT       &hm LSHIFT RBKT
+
+// *** Layer Template ***
+//
+//           ---------------------------------------------------------------------------------------------------------
+//           |         |         |         |         |         |   |         |         |         |         |         |
+//           |         |         |         |         |         |   |         |         |         |         |         |
+//           |         |         |         |         |         |   |         |         |         |         |         |
+//                                         |         |         |   |         |         |
+//                        bindings = <
+//    &none     &kp Q     &kp W     &kp E     &kp R     &kp T         &kp Y     &kp U     &kp I     &kp O     &kp P     &none
+//    &none     &kp A     &kp S     &kp D     &kp F     &kp G         &kp H     &kp J     &kp K     &kp L     &kp SEMI  &none
+//    &none     &kp Z     &kp X     &kp C     &kp V     &kp B         &kp N     &kp M     &kp COMMA &kp DOT   &kp FSLH  &none
+//                                  &none     &mo SYM   &kp SPACE     &kp BSPC  &mo NUM   &none
+//
+// *** Layer Template ***
+
+/ {
+    behaviors {
+        hm: homerow_mods {
+            compatible = "zmk,behavior-hold-tap";
+            label = "HOMEROW_MODS";
+            #binding-cells = <2>;
+            tapping-term-ms = <150>;
+            quick-tap-ms = <0>;
+            flavor = "tap-preferred";
+            bindings = <&kp>, <&kp>;
+        };
+    };
+        keymap {
+                compatible = "zmk,keymap";
+
+                qwerty_layer {
+//           ---------------------------------------------------------------------------------------------------------
+//           |    Q    |    W    |    E    |    R    |    T    |   |    Y    |    U    |    I    |    O    |    P    |
+//           |    A    |    S    |    D    |    F    |    G    |   |    H    |    J    |    K    |    L    |    ;    |
+//           |    Z    |    X    |    C    |    V    |    B    |   |    N    |    M    |    ,    |    .    |    /    |
+//                                         |   SYM   |   SPC   |   |   BKSP  |   NUM   |
+                        bindings = <
+    &none     &kp Q     &kp W     &kp E     &kp R     &kp T         &kp Y     &kp U     &kp I     &kp O     &kp P     &none
+    &none     HOME_A    HOME_S    HOME_D    HOME_F    &kp G         &kp H     HOME_J    HOME_K    HOME_L    HOME_SEMI &none
+    &none     &kp Z     &kp X     &kp C     &kp V     &kp B         &kp N     &kp M     &kp COMMA &kp DOT   &kp FSLH  &none
+                                  &none     &mo SYM   &kp SPACE     &kp BSPC  &mo NUM   &none
+                        >;
+                };
+		colemakdh_layer {
+//           ---------------------------------------------------------------------------------------------------------
+//           |    Q    |    W    |    F    |    P    |    B    |   |    J    |    L    |    U    |    Y    |    ;    |
+//           |    A    |    R    |    S    |    T    |    G    |   |    M    |    N    |    E    |    I    |    O    |
+//           |    Z    |    X    |    C    |    D    |    V    |   |    K    |    H    |    ,    |    .    |    /    |
+//                                         |   SYM   |   SPC   |   |   BKSP  |   NUM   |
+                        bindings = <
+    &none     &kp Q     &kp W     &kp F     &kp P     &kp B         &kp J     &kp L     &kp U     &kp Y     &kp SEMI  &none
+    &none     &kp A     &kp R     &kp S     &kp T     &kp G         &kp M     &kp N     &kp E     &kp I     &kp O     &none
+    &none     &kp Z     &kp X     &kp C     &kp D     &kp V         &kp K     &kp H     &kp COMMA &kp DOT   &kp FSLH  &none
+                                  &none     &mo SYM   &kp SPACE     &kp BSPC  &mo NUM   &none
+                        >;
+                };
+                number_layer {
+//
+//           ---------------------------------------------------------------------------------------------------------
+//           |    1    |    2    |    3    |    4    |    5    |   |    6    |    7    |    8    |    9    |    0    |
+//           |   TAB   |         |         |         |         |   |   LEFT  |   DOWN  |    UP   |  RIGHT  |         |
+//           |         |         |         |         |         |   |         |         |    ,    |    .    |  ENTER  |
+//                                         |   FNC   |   SPC   |   |   BKSP  |         |
+                        bindings = <
+    &none     &kp N1    &kp N2    &kp N3    &kp N4    &kp N5        &kp N6    &kp N7    &kp N8    &kp N9    &kp N0    &none
+    &none     HOME_TAB  &kp LGUI  &kp LALT  &kp LSHFT &none         &kp LEFT  HOME_DOWN HOME_UP  HOME_RIGHT &kp RSHFT &none
+    &none     &none     &none     &none     &none     &none         &none     &none     &kp COMMA &kp DOT   &kp RET   &none
+                                  &none     &mo FNC   &kp SPACE     &kp BSPC  &none     &none
+                       >;
+                };
+                symbol_layer {
+//
+//           ---------------------------------------------------------------------------------------------------------
+//           |    !    |    @    |    #    |    $    |    %    |   |    ^    |    &    |    *    |    (    |    )    |
+//           |   ESC   |    '    |    #    |    \    |    ~    |   |         |    -    |    =    |    [    |    ]    |
+//           |         |         |         |    \    |    `    |   |         |    _    |    +    |    {    |    }    |
+//                                         |         |   SPC   |   |   BKSP  |   FNC   |
+                        bindings = <
+    &none     &kp EXCL  &kp AT    &kp HASH  &kp DLLR  &kp PRCNT     &kp CARET &kp AMPS  &kp STAR  &kp LPAR  &kp RPAR  &none
+    &none     HOME_ESC HOME_SQT   HOME_HASH    HOME_BSLH &kp TILDE     &none     HOME_MIN  HOME_EQL  HOME_LBKT HOME_RBKT &none
+    &none     &none     &none     &none &kp NON_US_BSLH  &kp B         &none     &kp UNDER &kp PLUS  &kp LBRC  &kp RBRC  &none
+                                  &none     &none     &kp SPACE     &kp BSPC  &mo FNC   &none
+                        >;
+                };
+		function_layer {
+//
+//           ---------------------------------------------------------------------------------------------------------
+//           |   F1    |     F2    |   F3    |   F4    |   F5    |   |   F6    |   F7    |   F8    |   F9    |   F10   |
+//           |   F11   |     F12   |         |         |         |   |         |         |         |         |         |
+//           |   BOOT  |    QWERTY |COLEMAKDH|         |         |   |         |         |         |   BT    |  GAMING |
+//                                           |         |         |   |         |         |
+                        bindings = <
+    &none     &kp F1      &kp F2    &kp F3    &kp F4    &kp F5        &kp F6    &kp F7    &kp F8    &kp F9    &kp F10    &none
+    &none     &kp F11     &kp F12   &none     &none     &none         &none     &none     &none     &none     &none      &none
+    &none     &bootloader &to QWERT &to COLE  &none     &none         &none     &none     &none     &mo BT    &to GAMING &none
+                                    &none     &none     &none         &none     &none     &none
+
+                       >;
+                };
+		control_layer {
+//
+//           ------------------------------------------------------------------------------------------------------------------------
+//           |     BT1    |    BT2    |     BT3    |     BT4    |     BT5     |   |         |         |         |         |         |
+//           |     BTCLR  |           |            |            |             |   |         |         |         |         |         |
+//           |            |           |            |            |             |   |         |         |         |         |         |
+//                                                 |            |             |   |         |         |
+                          bindings = <
+      &none  &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &bt BT_SEL 4      &none     &none     &none     &none     &none     &none
+      &none  &bt BT_CLR   &none        &none        &none        &none             &none     &none     &none     &none     &none     &none
+      &none  &none        &none        &none        &none        &none             &none     &none     &none     &none     &none     &none
+                                       &none        &none        &none             &none     &none     &none
+                       >;
+                };
+        };
+};
