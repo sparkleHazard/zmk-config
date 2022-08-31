@@ -9,16 +9,20 @@
 #include <dt-bindings/zmk/bt.h>
 
 // Layers
-#define QWERT  		0
-#define COLE     	1
-#define NUM		2
-#define SYM		3
-#define FNC		4
-#define BT		5
-#define GAMING		6
+#define QWERT   0
+#define COLE    1
+#define NUM     2
+#define SYM     3
+#define FNC     4
+#define BT      5
+#define GAMING  6
+#define MOUSE   7
 
 // Spacebar Hyper key
 #define HYP         LS(LC(LA(LGUI)))
+
+// Mouse layer key
+//#define BKSP_MOUSE 
 
 // Home row mods - QWERTY
 #define HOME_A		&hm LSHIFT A
@@ -67,7 +71,7 @@
 //    &none     &kp Q     &kp W     &kp E     &kp R     &kp T         &kp Y     &kp U     &kp I     &kp O     &kp P     &none
 //    &none     &kp A     &kp S     &kp D     &kp F     &kp G         &kp H     &kp J     &kp K     &kp L     &kp SEMI  &none
 //    &none     &kp Z     &kp X     &kp C     &kp V     &kp B         &kp N     &kp M     &kp COMMA &kp DOT   &kp FSLH  &none
-//                                  &none     &mo SYM   &mt HYP SPACE &kp BSPC  &mo NUM   &none
+//                                  &none     &mo SYM   &mt HYP SPACE &mt MOUSE BSPC  &mo NUM   &none
 //
 // *** Layer Template ***
 
@@ -167,6 +171,20 @@
       &none  &bt BT_CLR   &none        &none        &none        &none             &none     &none     &none     &none     &none     &none
       &none  &none        &none        &none        &none        &none             &none     &none     &none     &none     &none     &none
                                        &none        &none        &none             &none     &none     &none
+                       >;
+                };
+                mouse_layer {
+//
+//           ---------------------------------------------------------------------------------------------------------
+//           |    !    |    @    |    #    |    $    |    %    |   |    ^    |    &    |    *    |    (    |    )    |
+//           |   ESC   |    '    |    #    |    \    |    ~    |   |         |    -    |    =    |    [    |    ]    |
+//           |         |         |         |    \    |    `    |   |         |    _    |    +    |    {    |    }    |
+//                                         |         |   SPC   |   |   BKSP  |   FNC   |
+                        bindings = <
+    &none     &kp EXCL  &kp AT    &kp HASH  &kp DLLR  &kp PRCNT     &kp CARET &kp AMPS  &kp STAR  &kp LPAR  &kp RPAR  &none
+    &none     HOME_ESC HOME_SQT   HOME_HASH    HOME_BSLH &kp TILDE     &none     HOME_MIN  HOME_EQL  HOME_LBKT HOME_RBKT &none
+    &none     &none     &none     &none &kp NON_US_BSLH  &kp B         &none     &kp UNDER &kp PLUS  &kp LBRC  &kp RBRC  &none
+                                  &none     &none     &mt HYP SPACE &kp BSPC  &mo FNC   &none
                        >;
                 };
         };
