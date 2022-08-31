@@ -31,14 +31,14 @@
 #define HOME_SEMI	&hm LSHIFT SEMI
 
 // Home row mods - COLEMAKDH
-#define HOME_A		&hm LSHIFT A
-#define HOME_R		&hm LGUI   R
-#define HOME_S		&hm LALT   S
-#define HOME_T		&hm LCTRL  T
-#define HOME_N		&hm RCTRL  N
-#define HOME_E		&hm LALT   E
-#define HOME_I		&hm LGUI   I
-#define HOME_O		&hm LSHIFT O
+//#define HOME_A		&hm LSHIFT A
+//#define HOME_R		&hm LGUI   R
+//#define HOME_S		&hm LALT   S
+//#define HOME_T		&hm LCTRL  T
+//#define HOME_N		&hm RCTRL  N
+//#define HOME_E		&hm LALT   E
+//#define HOME_I		&hm LGUI   I
+//#define HOME_O		&hm LSHIFT O
 
 // Home row mods - NUM
 #define HOME_TAB	&hm LSHIFT TAB
