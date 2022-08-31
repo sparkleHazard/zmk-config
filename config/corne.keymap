@@ -22,7 +22,7 @@
 #define HYP         LS(LC(LA(LGUI)))
 
 // Mouse layer key
-//#define BKSP_MOUSE 
+//#define B_MOUSE     &mo MOUSE
 
 // Home row mods - QWERTY
 #define HOME_A		&hm LSHIFT A
@@ -100,7 +100,7 @@
     &none     &kp Q     &kp W     &kp E     &kp R     &kp T         &kp Y     &kp U     &kp I     &kp O     &kp P     &none
     &none     HOME_A    HOME_S    HOME_D    HOME_F    &kp G         &kp H     HOME_J    HOME_K    HOME_L    HOME_SEMI &none
     &none     &kp Z     &kp X     &kp C     &kp V     &kp B         &kp N     &kp M     &kp COMMA &kp DOT   &kp FSLH  &none
-                                  &none     &mo SYM   &mt HYP SPACE &kp BSPC  &mo NUM   &none
+                                  &none     &mo SYM   &mt HYP SPACE &mt MOUSE BSPC  &mo NUM   &none
                         >;
                 };
 		colemakdh_layer {
