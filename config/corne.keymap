@@ -173,7 +173,7 @@
                                        &none        &none        &none             &none     &none     &none
                        >;
                 };
-                mouse_layer {
+        mouse_layer {
 //
 //           ---------------------------------------------------------------------------------------------------------
 //           |    !    |    @    |    #    |    $    |    %    |   |    ^    |    &    |    *    |    (    |    )    |
@@ -184,7 +184,7 @@
     &none     &kp EXCL  &kp AT    &kp HASH  &kp DLLR  &kp PRCNT     &kp CARET &kp AMPS  &kp STAR  &kp LPAR  &kp RPAR  &none
     &none     HOME_ESC HOME_SQT   HOME_HASH    HOME_BSLH &kp TILDE     &none     HOME_MIN  HOME_EQL  HOME_LBKT HOME_RBKT &none
     &none     &none     &none     &none &kp NON_US_BSLH  &kp B         &none     &kp UNDER &kp PLUS  &kp LBRC  &kp RBRC  &none
-                                  &none     &none     &mt HYP SPACE &kp BSPC  &mo FNC   &none
+                                  &none     &none     &mt HYP SPACE &none  &mo FNC   &none
                        >;
                 };
         };
