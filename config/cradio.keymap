@@ -76,13 +76,22 @@
 //
 // *** Layer Template ***
 
+&lt {
+        //retro-tap; // FIXME: LGUI+TAB for tab switching works. But LGUI+mouseclick does not work correctly when retro-tap is active.
+        quick-tap-ms = <199>;  // https://github.com/zmkfirmware/zmk/issues/1185
+};
+&mt {
+        //retro-tap; // FIXME: LGUI+TAB for tab switching works. But LGUI+mouseclick does not work correctly when retro-tap is active.
+        quick-tap-ms = <199>;  // https://github.com/zmkfirmware/zmk/issues/1185
+};
+
 / {
     behaviors {
         hm: homerow_mods {
             compatible = "zmk,behavior-hold-tap";
             label = "HOMEROW_MODS";
             #binding-cells = <2>;
-            tapping-term-ms = <150>;
+            tapping-term-ms = <200>;
             quick-tap-ms = <50>;
             flavor = "tap-preferred";
             bindings = <&kp>, <&kp>;
