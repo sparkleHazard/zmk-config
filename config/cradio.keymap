@@ -76,9 +76,12 @@
 //
 // *** Layer Template ***
 
-&hm {
-        //retro-tap; // FIXME: LGUI+TAB for tab switching works. But LGUI+mouseclick does not work correctly when retro-tap is active.
-        quick-tap-ms = <199>;  // https://github.com/zmkfirmware/zmk/issues/1185
+&mmv {
+    time-to-max-speed-ms = <500>;
+};
+
+&mwh {
+    acceleration-exponent=<1>;
 };
 &lt {
         //retro-tap; // FIXME: LGUI+TAB for tab switching works. But LGUI+mouseclick does not work correctly when retro-tap is active.
@@ -96,7 +99,7 @@
             label = "HOMEROW_MODS";
             #binding-cells = <2>;
             tapping-term-ms = <200>;
-            quick-tap-ms = <50>;
+            quick-tap-ms = <199>;
             flavor = "tap-preferred";
             bindings = <&kp>, <&kp>;
         };
@@ -195,10 +198,10 @@
 //           |         |         |         |         |         |   |         |         |         |         |         |
 //                                         |         |         |   |         |         |
                         bindings = <
-              &none     &none          &mmv MOVE_UP   &none           &none         &none     &none          &none          &none           &none
-              &none     &mmv MOVE_LEFT &mmv MOVE_DOWN &mmv MOVE_RIGHT &none         &none     &mkp LCLK      &mkp MCLK      &mkp RCLK       &none
-              &none     &mwh SCROLL_DOWN   &mwh SCROLL_UP &none           &none         &none     &none          &none          &none           &none
-                                                      &none           &none         &none     &none
+              &none     &none          &mmv MOVE_UP   &none            &none         &none     &none          &none          &none           &none
+              &none     &mmv MOVE_LEFT &mmv MOVE_DOWN &mmv MOVE_RIGHT  &none         &none     &mkp LCLK      &mkp MCLK      &mkp RCLK       &none
+              &none     &none          &mwh SCROLL_UP &mwh SCROLL_DOWN &none         &none     &none          &none          &none           &none
+                                                      &none            &none         &none     &none
                        >;
                 };
         };
