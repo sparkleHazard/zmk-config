@@ -101,7 +101,7 @@
               &kp Q     &kp W     &kp E     &kp R     &kp T         &kp Y     &kp U     &kp I     &kp O     &kp P
               HOME_A    HOME_S    HOME_D    HOME_F    &kp G         &kp H     HOME_J    HOME_K    HOME_L    HOME_SEMI
               &kp Z     &kp X     &kp C     &kp V     &kp B         &kp N     &kp M     &kp COMMA &kp DOT   &kp FSLH
-                                            &mo SYM   &mt HYP SPACE &lt MOUSE BSPC  &mo NUM
+                                            &mo SYM   &mt HYP SPACE &lt 7 BSPC  &mo NUM
                         >;
                 };
 		colemakdh_layer {
