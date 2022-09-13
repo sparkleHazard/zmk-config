@@ -17,7 +17,7 @@
 #define FNC     4
 #define BT      5
 #define MOUSE   6
-#define GAMING  7
+//#define GAMING  7
 
 // Spacebar Hyper key
 #define HYP         LS(LC(LA(LGUI)))
@@ -76,10 +76,10 @@
 //
 // *** Layer Template ***
 
-&hm {
+//&hm {
         //retro-tap; // FIXME: LGUI+TAB for tab switching works. But LGUI+mouseclick does not work correctly when retro-tap is active.
-        quick-tap-ms = <199>;  // https://github.com/zmkfirmware/zmk/issues/1185
-};
+//        quick-tap-ms = <199>;  // https://github.com/zmkfirmware/zmk/issues/1185
+//};
 &lt {
         //retro-tap; // FIXME: LGUI+TAB for tab switching works. But LGUI+mouseclick does not work correctly when retro-tap is active.
         quick-tap-ms = <199>;  // https://github.com/zmkfirmware/zmk/issues/1185
