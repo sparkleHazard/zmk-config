@@ -77,7 +77,7 @@
 // *** Layer Template ***
 
 &mmv {
-    time-to-max-speed-ms = <500>;
+    time-to-max-speed-ms = <250>;
 };
 
 &mwh {
