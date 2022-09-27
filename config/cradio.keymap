@@ -93,6 +93,14 @@
 };
 
 / {
+    combos {
+        compatible = "zmk,combos";
+        combo_caps {
+            timeout-ms = <50>;
+            key-positions = <5 22>;
+            bindings = <&kp CAPS>;
+        };
+    };
     behaviors {
         hm: homerow_mods {
             compatible = "zmk,behavior-hold-tap";
@@ -102,14 +110,6 @@
             quick-tap-ms = <175>;
             flavor = "tap-preferred";
             bindings = <&kp>, <&kp>;
-        };
-    };
-    combos {
-        compatible = "zmk,combos";
-        combo_caps {
-            timeout-ms = <50>;
-            key-positions = <5 22>;
-            bindings = <&kp LCAPS>;
         };
     };
         keymap {
