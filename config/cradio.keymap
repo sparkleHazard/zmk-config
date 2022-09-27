@@ -97,7 +97,7 @@
         compatible = "zmk,combos";
         combo_caps {
             timeout-ms = <50>;
-            key-positions = <5 22>;
+            key-positions = <0 17>;
             bindings = <&kp CAPS>;
         };
     };
