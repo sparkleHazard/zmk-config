@@ -109,7 +109,7 @@
         combo_caps {
             timeout-ms = <50>;
             key-positions = <5 22>;
-            bindings = <&kp CAPS>;
+            bindings = <&kp LCAPS>;
         };
     };
         keymap {
