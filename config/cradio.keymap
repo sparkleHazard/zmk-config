@@ -81,6 +81,14 @@
     acceleration-exponent=<1>;
 };
 
+&mt {
+    quick-tap-ms = <199>;
+};
+
+&lt {
+    quick-tap-ms = <199>;
+};
+
 / {
     combos {
         compatible = "zmk,combos";
